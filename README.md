@@ -4,7 +4,7 @@
 
 ---
 
-## 🧠 System Design
+##  System Design
 
 ![System Design](sd.png)
 
