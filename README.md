@@ -4,6 +4,10 @@
 
 ---
 
+## 🧠 System Design
+
+![System Design](sd.png)
+
 ##  Architecture Overview
 
 Crowdfundr is designed with **ExpressJS microservices**, using **RabbitMQ** as the message broker for inter-service communication.
