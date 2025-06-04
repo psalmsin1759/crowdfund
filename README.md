@@ -1,10 +1,10 @@
-# Crowdfundr 🪙
+# Crowdfundr 
 
 **Crowdfundr** is a modular and scalable crowdfunding platform built using Nodejs, following a microservices architecture. The system allows users to create campaigns, pledge funds, and receive notifications — all handled by independently deployed services.
 
 ---
 
-## 📦 Architecture Overview
+##  Architecture Overview
 
 Crowdfundr is designed with **ExpressJS microservices**, using **RabbitMQ** as the message broker for inter-service communication.
 
