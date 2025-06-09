@@ -1,19 +1,18 @@
-# Node modules
+
 node_modules/
 
-# Logs
+
 logs/
 *.log
 npm-debug.log*
 
-# Environment variables
-.env
-.env.*   # if you use multiple env files like .env.dev, .env.prod
 
-# Optional: OS/system files
+.env
+.env.*   
+
+
 .DS_Store
-Thumbs.db
+Thumbs.dbs
 
-# Build
+
 dist/
-.env
