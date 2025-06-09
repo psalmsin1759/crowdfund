@@ -39,6 +39,14 @@ cp .env.example .env
 
 ```
 
+### 3. Example .env for the user service:
+```bash
+PORT=3001
+JWT_SECRET=yoursecret
+MONGODB_URI=mongodb://localhost:27017/crowdfund_user
+RABBITMQ_URL=amqp://localhost:5672
+```
+
 
 ### Documentation
 
