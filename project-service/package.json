@@ -3,6 +3,10 @@
     "express": "^5.1.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.15.1",
+    "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
