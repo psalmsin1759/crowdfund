@@ -46,4 +46,4 @@ cp .env.example .env
 http://localhost:4000/api-docs/
 ```
 
-![System Design](screenshoots/userdoc.png)
+![System Design](/screenshoots/userdoc.png)
