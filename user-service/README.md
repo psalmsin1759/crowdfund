@@ -36,3 +36,14 @@ npm install
 
 # Create .env file
 cp .env.example .env
+
+```
+
+
+### Documentation
+
+```bash
+http://localhost:4000/api-docs/
+```
+
+![System Design](screenshoots/userdoc.png)
