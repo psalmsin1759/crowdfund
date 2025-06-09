@@ -1,10 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-const MailTrapProvider = require('../providers/email/MailTrapProvider');
-const SendGridProvider = require('../providers/email/SendGridProvider'); 
+import MailTrapProvider from '@/providers/email/MailTrapProvider';
+import SendGridProvider from '@/providers/email/SendGridProvider';
+import EmailProviderInterface from '@/interfaces/EmailProviderInterface';
 
-function getEmailProvider() {
+
+
+function getEmailProvider(): EmailProviderInterface {
   switch (process.env.EMAIL_PROVIDER) {
     case 'mailtrap':
       return new MailTrapProvider();
@@ -15,9 +18,9 @@ function getEmailProvider() {
   }
 }
 
-const provider = new getEmailProvider(); 
+const provider = getEmailProvider();
 
-function loadTemplate(templateName, variables = {}) {
+function loadTemplate(templateName: string, variables: Record<string, string> = {}): string {
   const filePath = path.join(__dirname, '../templates', `${templateName}.html`);
   let html = fs.readFileSync(filePath, 'utf8');
 
@@ -29,18 +32,17 @@ function loadTemplate(templateName, variables = {}) {
   return html;
 }
 
-async function sendEmail(to, subject, body) {
+export default async function sendEmail(to: string, subject: string, body: string): Promise<void> {
   try {
     const variables = {
       content: body,
     };
-    const html = loadTemplate("emailTemplate", variables);
+
+    const html = loadTemplate('emailTemplate', variables);
     await provider.send(to, subject, html);
     console.log(`[EmailService] Sent email to ${to}`);
-  } catch (error) {
+  } catch (error: any) {
     console.error('[EmailService] Failed to send email:', error.message);
     throw error;
   }
 }
-
-module.exports = sendEmail;
