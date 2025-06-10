@@ -13,6 +13,7 @@ export const findByEmail = async (email: string): Promise<IUser | null> => {
   return User.findOne({ email }).exec();
 };
 
+
 export const create = async (userData: Partial<IUser>): Promise<IUser> => {
   return User.create(userData);
 };
